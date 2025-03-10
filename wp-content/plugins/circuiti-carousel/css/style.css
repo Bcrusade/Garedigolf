@@ -1,0 +1,115 @@
+/* Impostazioni generali per gli item del carosello */
+
+.circuiti-carousel .owl-stage-outer {
+  overflow: visible !important;
+}
+
+.circuiti-carousel .owl-item {
+  border-radius: 25px; /* Raggio del bordo */
+  overflow: hidden; /* Assicura che gli elementi non fuoriescano */
+  display: flex;
+  flex-direction: column; /* Disposizione in colonna (immagine, titolo, icona) */
+  justify-content: flex-start; /* Allinea gli elementi in alto */
+  min-height: 400px; /* Imposta l'altezza minima per ogni elemento */
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3); /* Ombra sotto ogni blocco */
+  position: relative; /* Posizionamento relativo per contenitori interni */
+  background-color: #fff;
+}
+
+/* Contenitore per l'immagine */
+.carousel-image-container {
+  position: relative;
+  height: 100%; /* Imposta l'altezza dell'immagine al 60% del blocco */
+  width: 100%; /* Occupa tutta la larghezza disponibile */
+  overflow: hidden; /* Nasconde parte dell'immagine che fuoriesce */
+  display: flex;
+  align-items: flex-start; /* Posiziona l'immagine in alto */
+}
+
+/* L'immagine dentro il contenitore */
+.carousel-image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* L'immagine copre l'intero contenitore */
+  object-position: top; /* L'immagine è ancorata in alto */
+}
+
+.carousel-item-container {
+  padding: 30px;
+  height: 225px;
+  display: flex;
+  flex-direction: column;
+  align-content: flex-start;
+  justify-content: space-between;
+}
+
+/* Titolo del post */
+.carousel-item-title {
+  font-size: 28px;
+  line-height: 1.2;
+  color: #002a7d;
+  text-align: left;
+  margin: 0;
+}
+
+/* Contenitore dell'icona sotto il titolo */
+.carousel-item-icon {
+  text-align: left;
+  padding: 10px 0;
+}
+
+/* Icona sotto il titolo con larghezza impostata */
+.carousel-item-icon img {
+  width: 40px !important; /* Imposta la larghezza dell'icona */
+  height: auto; /* Mantiene le proporzioni */
+  margin-top: 10px;
+}
+
+/* Modifica per la visualizzazione della sfumatura sotto i blocchi */
+.circuiti-carousel .owl-stage {
+  padding-bottom: 40px; /* Spazio per visualizzare la sfumatura sotto il carosello */
+  padding-top: 40px; /* Spazio per visualizzare la sfumatura sopra il carosello */
+}
+
+/* Modifica dell'altezza minima di .owl-item */
+.circuiti-carousel .owl-item {
+  min-height: 400px; /* Mantieni l'altezza minima */
+  display: flex;
+  flex-direction: column; /* Assicurati che gli elementi siano in colonna */
+  justify-content: space-between; /* Distanza tra immagine, titolo e icona */
+}
+
+/* Colore dei pallini dello slider */
+.circuiti-carousel .owl-dots .owl-dot span {
+  background-color: hsla(0, 0%, 16%, 0.7) !important; /* Colore pallino */
+  border: #fff 3px solid;
+  border-radius: 100px;
+  width: 22px; /* Aumenta la dimensione del pallino */
+  height: 22px; /* Aumenta la dimensione del pallino */
+  margin: 0 8px; /* Distanza tra i pallini */
+  border-radius: 50%; /* Aggiungi il bordo arrotondato per fare il pallino */
+  display: inline-block;
+}
+
+/* Colore del pallino attivo */
+.circuiti-carousel .owl-dots .owl-dot.active span {
+  background-color: #d7fc69 !important; /* Colore pallino attivo */
+}
+
+/* Centrare i pallini al centro dello schermo */
+.circuiti-carousel .owl-dots {
+  position: absolute;
+  /* bottom: 20px; Posiziona i pallini a una certa distanza dal basso */
+  left: 50%;
+  transform: translateX(-50%); /* Centra i pallini orizzontalmente */
+  z-index: 10; /* Porta i pallini sopra gli altri elementi */
+}
+
+@media only screen and (max-width: 435px) and (min-width: 340px) {
+  .circuiti-carousel .carousel-item-title {
+    font-size: 17px;
+    line-height: 1.2em;
+    font-weight: 800;
+    letter-spacing: 0px;
+  }
+}

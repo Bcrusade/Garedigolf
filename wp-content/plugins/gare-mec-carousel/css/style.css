@@ -1,0 +1,222 @@
+/* Stile per il carosello */
+/* Modifica per la visualizzazione della sfumatura sotto i blocchi */
+.gare-carousel .owl-stage {
+  padding-bottom: 20px; /*Spazio per visualizzare la sfumatura sotto il carosello */
+  padding-top: 20px; /* Spazio per visualizzare la sfumatura sopra il carosello */
+}
+
+.gare-carousel .container {
+}
+
+.gare-carousel .owl-stage-outer {
+  overflow: visible !important;
+}
+
+.gare-carousel .owl-item {
+  /* border-radius: 25px; */
+  /* overflow: hidden; */
+  /* min-height: 500px !important; */
+  /* box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3); */
+  /* position: relative; */
+}
+
+.gare-carousel .carousel-image-container {
+  /* position: relative; */
+  height: 270px;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 16px 16px 16px 16px;
+  z-index: -1;
+  margin-left: -20px;
+}
+
+.gare-carousel .carousel-image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+}
+
+.gare-carousel .carousel-item-container {
+  display: flex;
+  flex-direction: column;
+  padding-top: 40px;
+  padding-right: 40px;
+  padding-bottom: 20px;
+  padding-left: 40px;
+  margin-right: 40px;
+  margin-left: 20px;
+  margin-top: -60px;
+  background-color: #ffffff;
+  border-radius: 16px 16px 16px 16px;
+  width: 100%;
+  word-break: break-word;
+  flex-wrap: nowrap;
+  min-height: 250px;
+  justify-content: space-between;
+}
+
+.gare-carousel .carousel-title-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.gare-carousel .carousel-item-title {
+  font-size: 25px;
+  line-height: 28px;
+  font-weight: bold;
+  color: #002a7d;
+  text-transform: uppercase;
+  font-weight: 700;
+  text-align: left;
+  padding-bottom: 5px;
+  margin: 0;
+}
+
+.carousel-item-date,
+.carousel-item-location,
+.carousel-item-price {
+  font-size: 15px;
+  line-height: 18px;
+  font-weight: 700;
+  letter-spacing: 0px;
+  margin: 0;
+  padding: auto;
+}
+
+.carousel-item-date {
+  color: #002a7d;
+  font-size: 18px;
+}
+
+.carousel-item-location {
+  padding-bottom: 15px;
+}
+
+.carousel-item-price {
+  color: #002a7d;
+  background-color: #53edff;
+  font-family: "Plus Jakarta Sans", Sans-serif;
+  font-size: 15px;
+  font-weight: bold;
+  border-radius: 60px 60px 60px 60px;
+  padding-top: 8px;
+  padding-right: 16px;
+  padding-bottom: 8px;
+  padding-left: 16px;
+  /* margin-bottom: 20px; */
+  width: fit-content;
+}
+
+.gare-carousel .carousel-button-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+  width: 100%;
+}
+.carousel-book-button-container {
+}
+.gare-carousel .carousel-book-button {
+  background-color: #d7fc69;
+  font-family: "Plus Jakarta Sans", Sans-serif;
+  font-size: 15px;
+  font-weight: bold;
+  fill: #000000;
+  color: #000000;
+  border-radius: 60px 60px 60px 60px;
+  padding: 15px 30px 15px 30px;
+  line-height: 20px;
+}
+
+.gare-carousel .carousel-book-button:hover {
+  background-color: #c4e560;
+}
+
+/* Messaggio quando non ci sono eventi */
+.no-events-found .carousel-item-title {
+  font-size: 18px;
+  color: #ff0000;
+  text-align: center;
+  margin: 20px;
+}
+
+/* Messaggio quando MEC non è attivo */
+.mec-not-active .carousel-item-title {
+  font-size: 18px;
+  color: #ff7f00;
+  text-align: center;
+  margin: 20px;
+}
+
+/* Centrare i pallini al centro dello schermo */
+.gare-carousel .owl-nav {
+  position: absolute;
+  /* bottom: 20px; Posiziona i pallini a una certa distanza dal basso */
+  left: 50%;
+  transform: translateX(-50%); /* Centra i pallini orizzontalmente */
+  z-index: 10; /* Porta i pallini sopra gli altri elementi */
+}
+
+@media only screen and (max-width: 435px) and (min-width: 340px) {
+  /* Stili per iPhone 12/13/14/15 standard e Pro */
+  .owl-nav {
+    display: none;
+  }
+  .gare-carousel .carousel-item-title {
+    font-size: 17px;
+    line-height: 1.2em;
+    font-weight: 800;
+    letter-spacing: 0px;
+  }
+  .gare-carousel .carousel-button-container {
+  }
+  .gare-carousel .carousel-item-container {
+    padding-top: 20px;
+    padding-right: 15px;
+    padding-bottom: 20px;
+    padding-left: 15px;
+    margin-right: 0px;
+    margin-left: 0px;
+    min-height: initial;
+  }
+  .gare-carousel .carousel-image-container {
+    height: 170px;
+  }
+  .gare-carousel .carousel-book-button {
+    padding: 10px 20px 10px 20px;
+  }
+}
+/* iPad Pro 11" e iPad Air (2020 e successivi) */
+@media only screen and (max-width: 834px) and (min-width: 768px) {
+  /* Stili per iPad Air e iPad Pro 11" */
+  .gare-carousel .carousel-item-title {
+    font-size: 17px;
+    line-height: 1.2em;
+    font-weight: 800;
+    letter-spacing: 0px;
+  }
+  .gare-carousel .carousel-button-container {
+  }
+  .gare-carousel .carousel-item-container {
+    padding-top: 20px;
+    padding-right: 15px;
+    padding-bottom: 20px;
+    padding-left: 15px;
+    margin-right: 0px;
+    margin-left: 0px;
+    min-height: initial;
+  }
+  .gare-carousel .carousel-image-container {
+    height: 170px;
+  }
+  .gare-carousel .carousel-book-button {
+    padding: 10px 20px 10px 20px;
+  }
+}
+
+/* iPad Pro 12.9" (tutte le generazioni) */
+@media only screen and (max-width: 1024px) and (min-width: 834px) {
+  /* Stili per iPad Pro 12.9" */
+}
