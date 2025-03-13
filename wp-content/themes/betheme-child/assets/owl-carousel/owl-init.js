@@ -1,4 +1,21 @@
 jQuery(document).ready(function (jQuery) {
+  jQuery(".hero-slider").owlCarousel({
+    items: 1,
+    loop: true,
+    autoplay: true,
+    autoplayTimeout: 7000,
+    autoplayHoverPause: false,
+    autoplaySpeed: 1000,
+    mouseDrag: false,
+    nav: false,
+    dots: true,
+    responsive: {
+      0: { items: 1, stagePadding: 0 },
+      768: { items: 1, stagePadding: 0 },
+      1200: { items: 1, stagePadding: 0 },
+    },
+  });
+
   jQuery(".home-carousel").owlCarousel({
     loop: true,
     margin: 10,
