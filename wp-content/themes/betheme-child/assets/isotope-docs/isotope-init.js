@@ -1,3 +1,5 @@
+jQuery.noConflict(); // Aggiungi questa riga per risolvere i conflitti con $.
+
 jQuery(document).ready(function ($) {
   // Inizializza Isotope per la griglia .grid.calendario-mec
   var $gridCalendario = $(".grid.calendario-mec").isotope({
@@ -36,7 +38,7 @@ jQuery(document).ready(function ($) {
   });
 
   // Inizializza Isotope per la griglia .grid.tv-programm-mansory
-  var $gridTV = $(".grid.tv-programm-mansory").isotope({
+  var $gridTV1 = $(".grid.tv-programm-mansory").isotope({
     itemSelector: ".grid-item",
     percentPosition: true,
     masonry: {
@@ -60,10 +62,47 @@ jQuery(document).ready(function ($) {
     if (filterValue) {
       console.log("Filtrando con:", filterValue);
       // Applica il filtro alla griglia
-      $gridTV.isotope({ filter: filterValue });
+      $gridTV1.isotope({ filter: filterValue });
 
       // Ricalcola la disposizione dopo il filtro
-      $gridTV.isotope("layout");
+      $gridTV1.isotope("layout");
+
+      // Log per verificare che il filtro sia stato applicato
+      console.log("Filtro categoria applicato con successo");
+    } else {
+      console.log("Valore del filtro categoria non valido");
+    }
+  });
+
+  // Inizializza Isotope per la griglia .grid.tv-video-mansory
+  var $gridTV2 = $(".grid.tv-video-mansory").isotope({
+    itemSelector: ".grid-item",
+    percentPosition: true,
+    masonry: {
+      columnWidth: ".grid-sizer",
+      gutter: 20,
+    },
+    filter: "*", // Mostra tutto inizialmente
+  });
+
+  // Log per confermare che Isotope è stato inizializzato correttamente per video
+  console.log("Isotope inizializzato per .grid.tv-video-mansory");
+
+  // Filtro per categorie di secondo livello (video)
+  $("#category-filter").on("click", ".filter-button", function () {
+    var filterValue = $(this).attr("data-filter");
+
+    // Log per vedere che il valore venga catturato
+    console.log("Filtro categoria applicato:", filterValue);
+
+    // Verifica che il filtro sia valido
+    if (filterValue) {
+      console.log("Filtrando con:", filterValue);
+      // Applica il filtro alla griglia
+      $gridTV2.isotope({ filter: filterValue });
+
+      // Ricalcola la disposizione dopo il filtro
+      $gridTV2.isotope("layout");
 
       // Log per verificare che il filtro sia stato applicato
       console.log("Filtro categoria applicato con successo");
