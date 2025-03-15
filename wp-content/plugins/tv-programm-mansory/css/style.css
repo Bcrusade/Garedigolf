@@ -42,7 +42,7 @@
   object-position: top;
 }
 
-.tv-programm-mansory .grid-item .tv-programm-info-container {
+/* .tv-programm-mansory .grid-item .tv-programm-info-container {
   padding: 35px;
   background-color: #ffffff;
   border-radius: 4px;
@@ -52,6 +52,19 @@
   min-height: 230px;
   margin: 0px 20px;
   margin-top: -50px;
+  position: relative;
+  z-index: 10;
+} */
+
+.tv-programm-mansory .grid-item .tv-programm-info-container {
+  padding: 25px;
+  background-color: #ffffff;
+  border-radius: 0 0 4px 4px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 150px;
+  margin-top: -100px;
   position: relative;
   z-index: 10;
 }
@@ -104,17 +117,23 @@
 }
 
 .tv-programm-mansory .grid-item .tv-programm-book-button {
-  background-color: #d7fc69;
-  font-size: 15px;
-  font-weight: bold;
-  color: #000000;
+  display: inline-block;
+  padding: 14px 24px;
+  background-color: #020202;
+  color: white;
+  font-size: 16px;
+  font-weight: normal;
+  text-transform: uppercase;
+  text-decoration: none;
   border-radius: 4px;
-  padding: 15px 30px;
-  text-align: center;
+
+  transition: color var(--mfn-button-transition) ease-in-out,
+    background-color var(--mfn-button-transition) ease-in-out,
+    border-color var(--mfn-button-transition) ease-in-out;
 }
 
 .tv-programm-mansory .grid-item .tv-programm-book-button:hover {
-  background-color: #c4e560;
+  background-color: #0b0d33;
 }
 
 .tv-programm-mansory .no-posts-found .tv-programm-title {
@@ -162,22 +181,26 @@
 }
 
 /* Stile per i bottoni di filtro */
-.tv-programm-mansory #location-filter {
+#category-filter {
   text-align: center;
   margin-bottom: 20px;
 }
 
-.tv-programm-mansory #location-filter .filter-button {
+#category-filter .filter-button {
   padding: 10px 20px;
   margin: 0 5px;
-  background-color: #53edff;
+  background-color: rgb(39, 149, 210);
   border: none;
   border-radius: 4px;
   font-size: 14px;
   font-weight: bold;
   cursor: pointer;
+
+  transition: color var(--mfn-button-transition) ease-in-out,
+    background-color var(--mfn-button-transition) ease-in-out,
+    border-color var(--mfn-button-transition) ease-in-out;
 }
 
-.tv-programm-mansory #location-filter .filter-button:hover {
+#category-filter .filter-button:hover {
   background-color: #d7fc69;
 }

@@ -16,6 +16,23 @@ jQuery(document).ready(function (jQuery) {
     },
   });
 
+  jQuery(".hero-slider-tv-programm").owlCarousel({
+    items: 1,
+    loop: false,
+    autoplay: false,
+    autoplayTimeout: 12000,
+    autoplayHoverPause: false,
+    autoplaySpeed: 500,
+    mouseDrag: false,
+    nav: false,
+    dots: false,
+    responsive: {
+      0: { items: 1, stagePadding: 0 },
+      768: { items: 1, stagePadding: 0 },
+      1200: { items: 1, stagePadding: 0 },
+    },
+  });
+
   jQuery(".home-carousel").owlCarousel({
     loop: true,
     margin: 10,

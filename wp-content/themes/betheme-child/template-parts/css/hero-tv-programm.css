@@ -1,0 +1,263 @@
+/* Stile generale per lo slider */
+
+/* @import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap'); */
+
+h1,
+h2,
+h3,
+h4 {
+  color: #ffffff;
+  /* font-family: "Raleway", sans-serif !important; */
+}
+
+.owl-stage {
+  /* padding-bottom: 20px; Spazio per visualizzare la sfumatura sotto il carosello */
+  /* padding-top: 20px; Spazio per visualizzare la sfumatura sopra il carosello */
+}
+
+.owl-stage-outer {
+  overflow: visible !important;
+}
+
+.hero-slider-tv-programm {
+  position: relative;
+  width: 100%;
+  height: 90vh;
+  overflow: hidden;
+  background-color: #122e57;
+}
+
+/* Stile di ogni slide */
+.slide {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  height: 90vh;
+  color: #fff;
+}
+
+/* Video di sfondo */
+.slide-bg-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+.video-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* background-color: rgba(0, 0, 0, 0.5); Colore nero con trasparenza */
+  background-image: linear-gradient(
+    to top,
+    #122e57 1%,
+    rgba(18, 46, 87, 0) 18%
+  );
+  z-index: 1; /* Assicura che l'overlay sia sopra al video */
+}
+
+/* .video-overlay::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 90vh;
+    background-image: linear-gradient(to right, #122e57 8%, rgba(18, 46, 87, 0) 58%);
+    pointer-events: none;  Evita che la sfumatura blocchi i click 
+  } */
+
+/* Immagine di sfondo */
+.slide-bg-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: -1;
+}
+
+/* Contenuto della slide */
+.slide-content {
+  display: flex;
+  width: 100%;
+  max-width: 1200px;
+  padding: 20px;
+  justify-content: flex-start;
+  align-items: center;
+  z-index: 2;
+}
+
+/* Colonna del testo */
+.slide-text-container {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0 2.625rem;
+}
+
+/* Categoria sopra al titolo */
+.categoria {
+  font-size: 18px;
+  font-weight: 300;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+  color: #fff;
+}
+
+/* Titolo della slide */
+.titolo {
+  font-size: 48px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #fff;
+}
+
+/* Sottotitolo della slide */
+.sottotitolo {
+  font-size: 24px;
+  font-weight: 300;
+  margin-bottom: 15px;
+  color: #fff;
+}
+
+/* Testo della slide */
+.testo {
+  font-size: 16px;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+/* Stile del bottone */
+.slide-button {
+  display: inline-block;
+  padding: 14px 24px;
+  background-color: #020202;
+  color: white;
+  font-size: 16px;
+  font-weight: normal;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.slide-button:hover {
+  background-color: #0b0d33;
+  color: #fff;
+}
+
+/* Colore dei pallini dello slider */
+.hero-slider-tv-programm .owl-dot {
+  border-color: white;
+  background-color: rgba(255, 255, 255, 0);
+  opacity: 0.5;
+  transform: translate3d(0px, 0px, 0px);
+  width: 8px;
+  height: 8px;
+  margin: 5px;
+  border: 2px solid #fff !important;
+  border-radius: 20px !important;
+}
+
+/* Colore del pallino attivo */
+.hero-slider-tv-programm .owl-dot.active {
+  background-color: #fff !important; /* Colore pallino attivo */
+  opacity: 1 !important;
+}
+
+/* Centrare i pallini al centro dello schermo */
+.hero-slider-tv-programm .owl-dots {
+  position: absolute;
+  bottom: 20px; /* Posiziona i pallini a una certa distanza dal basso */
+  left: 80%;
+  transform: translateX(-80%); /* Centra i pallini orizzontalmente */
+  z-index: 10; /* Porta i pallini sopra gli altri elementi */
+}
+
+/* Media Query per schermi tra 340px e 435px */
+@media only screen and (max-width: 435px) and (min-width: 340px) {
+  .slide-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .slide {
+    align-items: flex-end;
+    padding-bottom: 200px;
+  }
+
+  .video-overlay {
+    background-image: linear-gradient(
+      to top,
+      #122e57 15%,
+      rgba(18, 46, 87, 0) 70%
+    ) !important;
+    background-color: rgb(2 2 2 / 20%); /*  Colore nero con trasparenza */
+  }
+
+  .slide-text-container {
+    width: 90%;
+    align-items: center;
+    margin-bottom: 0px;
+  }
+
+  .categoria {
+    margin-bottom: 0px;
+  }
+
+  .titolo {
+    font-size: 32px;
+    margin-bottom: 0px;
+  }
+
+  .sottotitolo {
+    font-size: 18px;
+  }
+
+  .testo {
+    font-size: 14px;
+    max-height: 100px;
+    overflow: hidden;
+  }
+
+  .slide-button {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+
+  .custom-owl-dots {
+    bottom: 10px;
+    right: 10px;
+  }
+}
+
+/* Dispositivi con larghezza superiore a 430px (infinito) */
+@media only screen and (min-width: 430px) {
+  .video-overlay::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 90vh;
+    background-image: linear-gradient(
+      to right,
+      #122e57 8%,
+      rgba(18, 46, 87, 0) 58%
+    );
+    pointer-events: none; /* Evita che la sfumatura blocchi i click */
+  }
+}

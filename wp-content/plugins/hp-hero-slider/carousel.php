@@ -8,7 +8,9 @@ Author: Stefano
 
 // Carica CSS personalizzato
 function load_hp_hero_slider_assets() {
+    if (is_page('test-hero-slider')) {
     wp_enqueue_style('hp-hero-slider-style', plugin_dir_url(__FILE__) . 'css/style.css');
+    }
 }
 add_action('wp_enqueue_scripts', 'load_hp_hero_slider_assets');
 
