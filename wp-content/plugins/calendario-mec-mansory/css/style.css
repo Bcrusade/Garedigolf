@@ -2,26 +2,26 @@
 .grid {
 }
 
-.grid-item {
+.calendario-mec .grid-item {
   width: calc(50% - 20px); /* Due colonne su desktop e tablet */
   margin-bottom: 50px; /* Aumenta lo spazio verticale tra le righe */
 }
 
-.grid-item .event-image-container {
+.calendario-mec .grid-item .event-image-container {
   width: 100%;
   height: 350px;
   overflow: hidden;
   border-radius: 16px;
 }
 
-.grid-item .event-image-container img {
+.calendario-mec .grid-item .event-image-container img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   object-position: top;
 }
 
-.grid-item .event-info-container {
+.calendario-mec .grid-item .event-info-container {
   padding: 35px;
   background-color: #ffffff;
   border-radius: 16px;
@@ -35,13 +35,13 @@
   z-index: 10;
 }
 
-.grid-item .event-title-container {
+.calendario-mec .grid-item .event-title-container {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
 }
 
-.grid-item .event-title {
+.calendario-mec .grid-item .event-title {
   font-size: 23px;
   line-height: 25px;
   font-weight: 700;
@@ -51,13 +51,13 @@
   margin-bottom: 5px;
 }
 
-.grid-item .event-location {
+.calendario-mec .grid-item .event-location {
   font-size: 15px;
   color: #666;
   margin: 0;
 }
 
-.grid-item .event-price {
+.calendario-mec .grid-item .event-price {
   font-size: 15px;
   font-weight: bold;
   color: #002a7d;
@@ -67,14 +67,14 @@
   margin: 0;
 }
 
-.grid-item .event-date {
+.calendario-mec .grid-item .event-date {
   font-size: 18px;
   font-weight: 700;
   color: #002a7d;
   margin: 0;
 }
 
-.grid-item .event-button-container {
+.calendario-mec .grid-item .event-button-container {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -82,7 +82,7 @@
   width: 100%;
 }
 
-.grid-item .event-book-button {
+.calendario-mec .grid-item .event-book-button {
   background-color: #d7fc69;
   font-size: 15px;
   font-weight: bold;
@@ -92,18 +92,18 @@
   text-align: center;
 }
 
-.grid-item .event-book-button:hover {
+.calendario-mec .grid-item .event-book-button:hover {
   background-color: #c4e560;
 }
 
-.no-events-found .event-title {
+.calendario-mec .no-events-found .event-title {
   font-size: 18px;
   color: #ff0000;
   text-align: center;
   margin: 20px;
 }
 
-.mec-not-active .event-title {
+.calendario-mec .mec-not-active .event-title {
   font-size: 18px;
   color: #ff7f00;
   text-align: center;
@@ -122,20 +122,20 @@
 
 /* Per tablet (larghezza fino a 1024px) */
 @media (max-width: 1024px) {
-  .grid-item {
+  .calendario-mec .grid-item {
     width: calc(50% - 20px); /* Due colonne per tablet */
   }
-  .filter-button-group button {
+  .calendario-mec .filter-button-group button {
     margin: 10px !important;
   }
 }
 
 /* Per dispositivi mobili (larghezza fino a 768px) */
 @media (max-width: 768px) {
-  .grid-item {
+  .calendario-mec .grid-item {
     width: calc(100% - 20px); /* Una colonna su dispositivi mobili */
   }
-  .filter-button-group button {
+  .calendario-mec .filter-button-group button {
     margin: 10px !important;
   }
 }

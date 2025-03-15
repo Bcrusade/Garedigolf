@@ -19,7 +19,6 @@ function hp_log($message) {
     }
 }
 
-// Genera lo slider
 function hp_hero_slider() {
     ob_start();
     
@@ -34,14 +33,14 @@ function hp_hero_slider() {
         $slide = get_field("slide_$i", $post_id);
 
         if ($slide) {
-            $video_url = esc_url($slide['background_video_'.$i] ?? '');
+            $media_url = esc_url($slide['background_video_'.$i] ?? '');
             $categoria = esc_html($slide['categoria_slide_'.$i] ?? '');
             $titolo = esc_html($slide['titolo_slide_'.$i] ?? '');
             $sottotitolo = esc_html($slide['sottotitolo_slide_'.$i] ?? '');
             $testo = wp_kses_post($slide['testo_slide_'.$i] ?? '');
             $bottone = $slide['bottone_slide_'.$i] ?? null;
             
-            hp_log("Slide_$i - Video URL: $video_url");
+            hp_log("Slide_$i - Media URL: $media_url");
             hp_log("Slide_$i - Categoria: $categoria");
             hp_log("Slide_$i - Titolo: $titolo");
             hp_log("Slide_$i - Sottotitolo: $sottotitolo");
@@ -57,12 +56,25 @@ function hp_hero_slider() {
                 }
             }
 
-            if (!empty($video_url)) {
+            if (!empty($media_url)) {
                 $slider_found = true;
+                hp_log("Slide_$i - Verifica tipo media...");
+                
                 echo '<div class="slide">';
-                echo "<video autoplay loop muted playsinline class='slide-bg-video'>
-                        <source src='$video_url' type='video/mp4'>
-                      </video>";
+                
+                // Controllo se è un video MP4
+                if (preg_match('/\.mp4$/i', $media_url)) {
+                    hp_log("Slide_$i - Media è un video MP4");
+                    echo "<video autoplay loop muted playsinline class='slide-bg-video'>
+                            <source src='$media_url' type='video/mp4'>
+                          </video>";
+                } else {
+                    hp_log("Slide_$i - Media è un'immagine");
+                    // Se non è MP4, assumiamo che sia un'immagine
+                    echo "<div class='slide-bg-image' style='background-image: url($media_url);'></div>";
+                }
+                
+                echo '<div class="video-overlay"></div>';  
                 echo '<div class="slide-content">';
                 echo '<div class="slide-text-container">';
                 echo '<div class="slide-text">';
@@ -94,6 +106,7 @@ function hp_hero_slider() {
     echo '</div>'; // Chiudi hero-slider
     return ob_get_clean();
 }
+
 
 // Registrazione dello shortcode
 function hp_hero_slider_init() {
