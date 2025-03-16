@@ -126,3 +126,7 @@ function allow_svg_upload($mimes) {
 }
 add_filter('upload_mimes', 'allow_svg_upload');
 
+
+
+
+

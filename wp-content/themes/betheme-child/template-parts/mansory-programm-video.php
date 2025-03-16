@@ -33,7 +33,7 @@ if (!$posts_query->have_posts()) {
 // Recupera tutte le categorie di primo livello per il filtro (tassonomia 'categoria-programma')
 $categories = get_terms(array(
     'taxonomy'   => 'categoria-programma',  // Tassonomia personalizzata
-    'parent'     => 0,                       // Solo categorie di primo livello
+    'parent'     => 1,                       // Solo categorie di secondo livello
     'hide_empty' => true,
 ));
 
@@ -70,9 +70,9 @@ if (empty($second_level_categories)) {
     foreach ($second_level_categories as $category): 
         error_log('Mostrando categoria: ' . $category->name);
     ?>
-        <button class="filter-button" data-filter=".category-<?php echo esc_attr($category->slug); ?>">
-            <?php echo esc_html($category->name); ?>
-        </button>
+    <button class="filter-button" data-filter=".category-<?php echo esc_attr($category->slug); ?>">
+        <?php echo esc_html($category->name); ?>
+    </button>
     <?php endforeach; ?>
 </div>
 
@@ -80,10 +80,10 @@ if (empty($second_level_categories)) {
 <div class="grid tv-video-mansory">
     <div class="grid-sizer"></div>
     <?php if ($posts_query->have_posts()) : ?>
-        <?php foreach ($posts_query->posts as $post): ?>
-            <?php setup_postdata($post); ?>
+    <?php foreach ($posts_query->posts as $post): ?>
+    <?php setup_postdata($post); ?>
 
-            <?php
+    <?php
             $post_title = get_the_title($post);
             $post_link = get_permalink($post);
             $post_thumbnail = get_the_post_thumbnail_url($post->ID, 'medium');
@@ -106,23 +106,24 @@ if (empty($second_level_categories)) {
             error_log('Categorie del post ' . $post_title . ': ' . print_r($post_categories, true));
             error_log('Classe del post per il filtro: ' . $category_class);
             ?>
-            <div class="grid-item<?php echo $category_class; ?>">
-                <div class="tv-video-container">
-                    <?php if ($post_thumbnail): ?>
-                        <div class="tv-video-image-container">
-                            <img src="<?php echo esc_url($post_thumbnail); ?>" alt="<?php echo esc_attr($post_title); ?>">
-                        </div>
-                    <?php endif; ?>
-                    <div class="tv-video-info-container">
-                        <p class="tv-video-date"><?php echo esc_html($post_date); ?></p>
-                        <h3 class="tv-video-title"><?php echo esc_html($post_title); ?></h3>
-                        <a href="<?php echo esc_url($post_link); ?>" class="tv-video-book-button">Leggi</a>
-                    </div>
+    <div class="grid-item<?php echo $category_class; ?>">
+        <a href="<?php echo esc_url($post_link); ?>" class="">
+            <div class="tv-video-container">
+                <?php if ($post_thumbnail): ?>
+                <div class="tv-video-image-container">
+                    <img src="<?php echo esc_url($post_thumbnail); ?>" alt="<?php echo esc_attr($post_title); ?>">
+                </div>
+                <?php endif; ?>
+                <div class="tv-video-info-container">
+                    <p class="tv-video-date"><?php echo esc_html($post_date); ?></p>
+                    <h3 class="tv-video-title"><?php echo esc_html($post_title); ?></h3>
                 </div>
             </div>
-        <?php endforeach; ?>
+        </a>
+    </div>
+    <?php endforeach; ?>
     <?php else: ?>
-        <p>No posts found.</p>
+    <p>No posts found.</p>
     <?php endif; ?>
 </div>
 

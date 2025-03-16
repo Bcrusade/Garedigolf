@@ -60,3 +60,20 @@ Version: 2.0.1
     fill: #002a7d;
   }
 }
+
+/* TV Programm page */
+
+/* Definizione della larghezza massima */
+.-row {
+  --container-max-width: 1270px;
+  --content-width: var(
+    --container-max-width
+  ); /* Usa direttamente il valore della variabile */
+}
+
+.tv-programm-container .-row {
+  height: 100%;
+  margin: 0 auto;
+  max-width: var(--content-width);
+  width: 100%;
+}
