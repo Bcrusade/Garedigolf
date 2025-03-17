@@ -8,16 +8,23 @@
   padding-bottom: 50px;
 }
 
-.grid-item {
-  transition: transform 0.5s ease, box-shadow 0.2s ease; /* Aggiungi transizioni fluide */
+.grid-item:hover {
+  z-index: 1000000;
 }
 
-.grid-item:hover {
+.grid-item a {
+  transition: transform 0.8s ease, box-shadow 0.2s ease; /* Aggiungi transizioni fluide */
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.grid-item a:hover {
   transform: scale(1.15);
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
   cursor: pointer;
   z-index: 1000000;
-  transition: transform 0.5s ease, box-shadow 0.2s ease; /* Aggiungi transizioni fluide */
+  transition: transform 0.4s ease, box-shadow 0.5s ease; /* Aggiungi transizioni fluide */
 }
 
 .tv-video-mansory /* clear fix */
@@ -124,9 +131,9 @@
 }
 
 .tv-video-mansory .grid-item .tv-video-title {
-  font-size: 20px;
-  line-height: 25px;
-  font-weight: 700;
+  font-size: 18px;
+  line-height: 22px;
+  font-weight: 800;
   color: #fff;
   text-transform: uppercase;
   margin-bottom: 5px;

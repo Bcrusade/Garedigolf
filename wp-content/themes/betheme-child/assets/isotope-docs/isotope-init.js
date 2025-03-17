@@ -43,7 +43,7 @@ jQuery(document).ready(function ($) {
     percentPosition: true,
     masonry: {
       columnWidth: ".grid-sizer",
-      gutter: 20,
+      gutter: 0,
     },
     filter: "*", // Mostra tutto inizialmente
   });

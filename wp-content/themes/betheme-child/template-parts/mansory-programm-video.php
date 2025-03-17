@@ -33,7 +33,7 @@ if (!$posts_query->have_posts()) {
 // Recupera tutte le categorie di primo livello per il filtro (tassonomia 'categoria-programma')
 $categories = get_terms(array(
     'taxonomy'   => 'categoria-programma',  // Tassonomia personalizzata
-    'parent'     => 1,                       // Solo categorie di secondo livello
+    'parent'     => 0,                       // Solo categorie di secondo livello
     'hide_empty' => true,
 ));
 
