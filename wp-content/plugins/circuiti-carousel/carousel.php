@@ -3,7 +3,7 @@
 /*
 Plugin Name:  Circuiti Carousel
 Version: 1.0
-Description: Carousel that returns all Circuiti events.
+Description: Carousel that returns all Circuiti events. [circuiti_carousel]
 Author: Stefano
 */
 
@@ -21,8 +21,8 @@ add_action('wp_enqueue_scripts', 'load_custom_plugin_styles');
 function carousel_circuiti() {
     ob_start(); // Inizia l'output buffering
     ?>
-    <div class="owl-carousel circuiti-carousel">
-        <?php
+<div class="owl-carousel circuiti-carousel">
+    <?php
         $args = array(
             'post_type'      => 'post', // Se gli eventi MEC hanno un altro post_type, cambialo qui
             'posts_per_page' => '10', // Numero di articoli da mostrare
@@ -32,28 +32,30 @@ function carousel_circuiti() {
         $query = new WP_Query($args);
 
         while ($query->have_posts()) : $query->the_post(); ?>
-            <div class="item">
-                
-                    <?php if (has_post_thumbnail()) : ?>
-                        <div class="carousel-image-container">
-                            <img src="<?php echo esc_url(get_the_post_thumbnail_url(get_the_ID(), 'medium')); ?>" alt="<?php echo esc_attr(get_the_title()); ?>">
-                        </div>
-                    <?php endif; ?>
-                    <div class="carousel-item-container">
-                        <h6 class="title">CIRCUITO</h6>
-                        <h3 class="carousel-item-title"><?php echo esc_html(get_the_title()); ?></h3>
-                        <div class="carousel-item-icon">
-                        <a href="<?php echo esc_url(get_permalink()); ?>">
-                            <img decoding="async" src="wp-content/uploads/2023/06/ski3-iconarrow.svg" alt="" loading="lazy">
-                            </a>
-                        </div>
-                    </div>
+    <div class="item">
 
+        <?php if (has_post_thumbnail()) : ?>
+        <div class="carousel-image-container">
+            <img src="<?php echo esc_url(get_the_post_thumbnail_url(get_the_ID(), 'medium')); ?>"
+                alt="<?php echo esc_attr(get_the_title()); ?>">
+        </div>
+        <?php endif; ?>
+        <div class="carousel-item-container">
+            <h6 class="title">CIRCUITO</h6>
+            <h3 class="carousel-item-title"><?php echo esc_html(get_the_title()); ?></h3>
+            <div class="carousel-item-icon">
+                <a href="<?php echo esc_url(get_permalink()); ?>">
+                    <img decoding="async" src="https://www.garedigolf.it/wp-content/uploads/2023/06/ski3-iconarrow.svg"
+                        alt="" loading="lazy">
+                </a>
             </div>
-        <?php endwhile;
-        wp_reset_postdata(); ?>
+        </div>
+
     </div>
-    <?php
+    <?php endwhile;
+        wp_reset_postdata(); ?>
+</div>
+<?php
     return ob_get_clean(); // Ritorna l'output
 }
 
